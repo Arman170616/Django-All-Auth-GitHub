@@ -1,0 +1,14 @@
+{% load socialaccount %}
+
+<h1>Django All-Auth</h1>
+
+
+{% if request.user.is_authenticated %}
+
+
+    <a href="{% url 'account_logout' %}">Log out</a>
+
+{% else %}
+<a href="{% provider_login_url 'github' %}">Login with github</a>
+
+{% endif %}
